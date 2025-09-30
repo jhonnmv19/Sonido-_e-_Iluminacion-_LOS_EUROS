@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Euros</title>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <link rel="icon" href="Imagenes/logo Los euros_facturas.png" type="image/png">
+    <link rel="stylesheet" href="Estilos/Style.css">
+    <link rel="stylesheet" href="Estilos/responsive-estilo.css">
+    
+    <script src="java/app.js" defer></script>
+    <script src="java/login.js" defer></script>
+    
+</head>
+
+
+<body>
+
+  <header class="header">
+    <div class="menu container">
+      <div class="logo">
+        <img src="Imagenes/logo Los euros_facturas.png" alt="Logo de la tienda Los Euros" class="logo-img">
+        
+   
+      </div>
+  
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon-label">
+        <img src="Imagenes/menu-icon.png" alt="Menú" class="menu-icon">
+      </label>
+
+
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+
+                <li class="submenu">
+                    <a href="#">Categorías</a>
+                    <ul class="dropdown">
+                        <li class="submenu-item">
+                            <a href="#">Audio Pro</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Categorias/Audio Pro/Line Array.html">Line Array</a></li>
+                                <li><a href="Paginas/Categorias/Audio Pro/Cajas Acústicas.html">Cajas Acústicas</a></li>
+                                <li><a href="Paginas/Categorias/Audio Pro/Sistemas de Columna.html">Sistemas de Columna</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Estudio</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Categorias/Estudio/Monitores.html">Monitores</a></li>
+                                <li><a href="Paginas/Categorias/Estudio/Control de Monitoreo.html">Control de Monitoreo</a></li>
+                                <li><a href="Paginas/Categorias/Estudio/Sub-Bajo Estudio.html">Sub-Bajo Estudio</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Micrófonos</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Categorias/Micrófonos/Dinámicos.html">Dinámicos</a></li>
+                                <li><a href="Paginas/Categorias/Micrófonos/Condensador.html">Condensador</a></li>
+                                <li><a href="Paginas/Categorias/Micrófonos/Inalámbricos.html">Inalámbricos</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Iluminación</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Categorias/Iluminación/Beam.html">Beam</a></li>
+                                <li><a href="Paginas/Categorias/Iluminación/Spot.html">Spot</a></li>
+                                <li><a href="Paginas/Categorias/Iluminación/Wash.html">Wash</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Pantallas LED</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Categorias/Pantallas LED/DigiShow.html">DigiShow</a></li>
+                                <li><a href="Paginas/Categorias/Pantallas LED/ADJ.html">ADJ</a></li>
+                                <li><a href="Paginas/Categorias/Pantallas LED/LED Profesional.html">LED Profesional</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Estructura y Escenarios</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Categorias/Estructura y Escenarios/Tarimas.html">Tarimas</a></li>
+                                <li><a href="Paginas/Categorias/Estructura y Escenarios/Truss Cuadrado.html">Truss Cuadrado</a></li>
+                                <li><a href="Paginas/Categorias/Estructura y Escenarios/Truss Triangular.html">Truss Triangular</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Cables</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Categorias/Cables/XLR.html">XLR</a></li>
+                                <li><a href="Paginas/Categorias/Cables/TRS.html">TRS</a></li>
+                                <li><a href="Paginas/Categorias/Cables/TS.html">TS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="submenu">
+                    <a href="#">Ofertas</a>
+                    <ul class="dropdown">
+                        <li class="submenu-item">
+                            <a href="#">Audio Pro</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Ofertas/Audio Pro/Line Array.html">Line Array</a></li>
+                                <li><a href="Paginas/Ofertas/Audio Pro/Cajas Acústicas.html">Cajas Acústicas</a></li>
+                                <li><a href="Paginas/Ofertas/Audio Pro/Sistemas de Columna.html">Sistemas de Columna</a></li>
+                              
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Estudio</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Ofertas/Estudio/Monitores.html">Monitores</a></li>
+                                <li><a href="Paginas/Ofertas/Estudio/Control de Monitoreo.html">Control de Monitoreo</a></li>
+                                <li><a href="Paginas/Ofertas/Estudio/Sub-Bajo Estudio.html">Sub-Bajo Estudio</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Micrófonos</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Ofertas/Micrófonos/Dinámicos.html">Dinámicos</a></li>
+                                <li><a href="Paginas/Ofertas/Micrófonos/Condensador.html">Condensador</a></li>
+                                <li><a href="Paginas/Ofertas/Micrófonos/Inalámbricos.html">Inalámbricos</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Iluminación</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Ofertas/Iluminación/Beam.html">Beam</a></li>
+                                <li><a href="Paginas/Ofertas/Iluminación/Spot.html">Spot</a></li>
+                                <li><a href="Paginas/Ofertas/Iluminación/Wash.html">Wash</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Pantallas LED</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Ofertas/Pantallas LED/DigiShow.html">DigiShow</a></li>
+                                <li><a href="Paginas/Ofertas/Pantallas LED/ADJ.html">ADJ</a></li>
+                                <li><a href="Paginas/Ofertas/Pantallas LED/LED Profesional.html">LED Profesional</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Estructura y Escenarios</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Ofertas/Estructura y Escenarios/Tarimas.html">Tarimas</a></li>
+                                <li><a href="Paginas/Ofertas/Estructura y Escenarios/Truss Cuadrado.html">Truss Cuadrado</a></li>
+                                <li><a href="Paginas/Ofertas/Estructura y Escenarios/Truss Triangular.html">Truss Triangular</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Cables</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Ofertas/Cables/XLR.html">XLR</a></li>
+                                <li><a href="Paginas/Ofertas/Cables/TRS.html">TRS</a></li>
+                                <li><a href="Paginas/Ofertas/Cables/TS.html">TS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="submenu">
+                    <a href="#">Venta de Bodega</a>
+                    <ul class="dropdown">
+                        <li class="submenu-item">
+                            <a href="#">Audio Pro</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Venta de Bodega/Audio Pro/Line Array.html">Line Array</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Audio Pro/Cajas Acústicas.html">Cajas Acústicas</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Audio Pro/Sistemas de Columna.html">Sistemas de Columna</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Estudio</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Venta de Bodega/Estudio/Monitores.html">Monitores</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Estudio/Control de Monitoreo.html">Control de Monitoreo</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Estudio/Sub-Bajo Estudio.html">Sub-Bajo Estudio</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Micrófonos</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Venta de Bodega/Micrófonos/Dinámicos.html">Dinámicos</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Micrófonos/Condensador.html">Condensador</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Micrófonos/Inalámbricos.html">Inalámbricos</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Iluminación</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Venta de Bodega/Iluminación/Beam.html">Beam</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Iluminación/Spot.html">Spot</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Iluminación/Wash.html">Wash</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Pantallas LED</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Venta de Bodega/Pantallas LED/DigiShow.html">DigiShow</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Pantallas LED/ADJ.html">ADJ</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Pantallas LED/LED Profesional.html">LED Profesional</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Estructura y Escenarios</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Venta de Bodega/Estructura y Escenarios/Tarimas.html">Tarimas</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Estructura y Escenarios/Truss Cuadrado.html">Truss Cuadrado</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Estructura y Escenarios/Truss Triangular.html">Truss Triangular</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Cables</a>
+                            <ul class="sub-submenu">
+                                <li><a href="Paginas/Venta de Bodega/Cables/XLR.html">XLR</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Cables/TRS.html">TRS</a></li>
+                                <li><a href="Paginas/Venta de Bodega/Cables/TS.html">TS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="submenu">
+                    <a href="#">Contáctanos</a>
+                    <ul class="dropdown contact-dropdown">
+                        <li><a href="Paginas/Contacto.html">VentasLosEuros@gmail.com</a></li>
+                        <li><a href="https://wa.me/59172793459" target="_blank">+591 72793459 (WhatsApp)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <a href="login.html" class="btn-login-header">
+          <img src="imagenes/icono-login.png" alt="Iniciar Sesión" />
+        </a>
+    </div>
+
+    <div class="header-line"></div> </header>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const mainNav = document.querySelector('.main-nav');
+  
+    menuButton.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  </script>
+  
+  
+ 
+<section class="ruleta-nuevos">
+  <div class="carousel">
+    <div class="item">
+      <a href="detalles/nexos.html">
+        <img src="Imagenes/nuevo_producto.jpeg" alt="Nexos Trading">
+      </a>
+      <div class="info">
+        <h4>Nexos Trading</h4>
+        <p>Controlador DMX profesional</p>
+        <span>$320.00</span>
+      </div>
+    </div>
+    <div class="item">
+      <a href="detalles/strobo.html">
+        <img src="Imagenes/nuevo producto estrobe.png" alt="Strobo TECShow THUNDER STROBE KIT">
+      </a>
+      <div class="info">
+        <h4>Strobo TECShow</h4>
+        <p>THUNDER STROBE KIT con efectos potentes</p>
+        <span>$150.00</span>
+      </div>
+    </div>
+    <div class="item">
+      <a href="detalles/led.html">
+        <img src="Imagenes/nuevo producto led .jpeg" alt="Pantallas LED - ExpoRed - DigiRed">
+      </a>
+      <div class="info">
+        <h4>Pantalla LED DigiRed</h4>
+        <p>Alta resolución 1080p - Uso interior/exterior</p>
+        <span>$820.00</span>
+      </div>
+    </div>
+    <div class="item">
+      <a href="detalles/nexos.html">
+        <img src="Imagenes/nuevo_producto.jpeg" alt="Nexos Trading">
+      </a>
+      <div class="info">
+        <h4>Nexos Trading</h4>
+        <p>Controlador DMX profesional</p>
+        <span>$320.00</span>
+      </div>
+    </div>
+    <div class="item">
+      <a href="detalles/strobo.html">
+        <img src="Imagenes/nuevo producto estrobe.png" alt="Strobo TECShow THUNDER STROBE KIT">
+      </a>
+      <div class="info">
+        <h4>Strobo TECShow</h4>
+        <p>THUNDER STROBE KIT con efectos potentes</p>
+        <span>$150.00</span>
+      </div>
+    </div>
+    <div class="item">
+      <a href="detalles/led.html">
+        <img src="Imagenes/nuevo producto led .jpeg" alt="Pantallas LED - ExpoRed - DigiRed">
+      </a>
+      <div class="info">
+        <h4>Pantalla LED DigiRed</h4>
+        <p>Alta resolución 1080p - Uso interior/exterior</p>
+        <span>$820.00</span>
+      </div>
+    </div>
+  </div>
+  
+</section>
+<section class="categorias" id="categorias">
+  <h2 style="text-align: center;">Categorías</h2>
+  <div class="carrusel-wrapper">
+    <div class="carrusel-categorias">
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Audio Pro/Line Array.html">
+          <img src="Imagenes/nexo_geo.png" alt="Audio Pro">
+        </a>
+        <p>Audio Pro</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Micrófonos/Inalámbricos.html">
+          <img src="Imagenes/images.jpeg" alt="Micrófono">
+        </a>
+        <p>Micrófono</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Estudio/Monitores.html">
+          <img src="Imagenes/ALT-LIVE1202-52.png" alt="Estudio">
+        </a>
+        <p>Estudio</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Iluminación/Beam.html">
+          <img src="Imagenes/cabeza.jpeg" alt="Iluminación">
+        </a>
+        <p>Iluminación</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Pantallas LED/ADJ.html">
+          <img src="Imagenes/pantallaled.png" alt="Pantalla Led">
+        </a>
+        <p>Pantalla Led</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Estructura y Escenarios/Tarimas.html">
+          <img src="Imagenes/estructura.png" alt="Estructura">
+        </a>
+        <p>Estructura y Escenarios</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Cables/TRS.html">
+          <img src="Imagenes/MS-CABLEMICRO.png" alt="Cables">
+        </a>
+        <p>Cables</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Audio Pro/Cajas Acústicas.html">
+          <img src="Imagenes/nexo_geo.png" alt="Audio Pro">
+        </a>
+        <p>Audio Pro</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Micrófonos/Dinámicos.html">
+          <img src="Imagenes/images.jpeg" alt="Micrófono">
+        </a>
+        <p>Micrófono</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Estudio/Sub-Bajo Estudio.html">
+          <img src="Imagenes/ALT-LIVE1202-52.png" alt="Estudio">
+        </a>
+        <p>Estudio</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Iluminación/Spot.html">
+          <img src="Imagenes/cabeza.jpeg" alt="Iluminación">
+        </a>
+        <p>Iluminación</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Pantallas LED/LED Profesional.html">
+          <img src="Imagenes/pantallaled.png" alt="Pantalla Led">
+        </a>
+        <p>Pantalla Led</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Estructura y Escenarios/Truss Cuadrado.html">
+          <img src="Imagenes/estructura.png" alt="Estructura">
+        </a>
+        <p>Estructura y Escenarios</p>
+      </div>
+
+      <div class="categoria">
+        <a href="Paginas/Categorias/Cables/TS.html">
+          <img src="Imagenes/MS-CABLEMICRO.png" alt="Cables">
+        </a>
+        <p>Cables</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="destacados">
+  <h2 style="text-align: center;">Nuestros Highlights</h2>
+  <div class="filtros">
+    <button onclick="mostrarDestacados('ofertas')">Ofertas</button>
+    <button onclick="mostrarDestacados('vendidos')">Más Vendidos</button>
+    <button onclick="mostrarDestacados('nuevos')">Recién Llegados</button>
+  </div>
+  <div class="productos-destacados" id="destacados"></div>
+  <div class="carrusel-botones" id="botones-carrusel" style="display: none;">
+    <button onclick="moverCarrusel(-1)">‹</button>
+    <button onclick="moverCarrusel(1)">›</button>
+  </div>
+</section>
+
+<div class="carrito-flotante carrito-cerrado" id="carrito" style="width: 450px; background-color: #f0f0f0;">
+  <h3>Carrito</h3>
+  <div id="encabezados-carrito" class="encabezados">
+    <span>Producto</span>
+    <span>Nombre</span>
+    <span>Precio</span>
+    <span>Cantidad</span>
+    <span>Acción</span>
+  </div>
+  <ul id="lista-carrito" class="lista-carrito"></ul>
+  <p id="mensaje-carrito">Tu carrito está vacío.</p>
+  <button onclick="verNuevos()">Ver recién llegados</button>
+  <div class="acciones-carrito">
+    <button onclick="vaciarCarrito()" class="boton-vaciar">Vaciar Carrito</button>
+    <!-- Botón de checkout -->
+    <button onclick="location.href='checkout.html'" class="boton-checkout">Ir al checkout</button>
+  </div>
+</div> 
+
+
+
+
+
+
+<footer class="footer">
+  <div class="link-container">
+      <div class="link">
+          <h3>SUCURSAL COCHABAMBA</h3>
+          <ul>
+              <li><a href="#">SERVICIO TÉCNICO</a></li>
+              <li class="location">
+                <img src="Imagenes/Ubicacion Amarillo.png" width="20px" alt="ubicacion">
+                <a href="https://www.google.com/maps/place/Av.Segunda,+Santa+Cruz" target="_blank">Av. Segunda / Condenbamba</a>
+            </li>
+            <li class="phone-number">
+                <img src="Imagenes/telefono amarillo.jpeg" width="20px" alt="Teléfono">
+                <a href="tel:611-0995">611-0995</a>
+            </li>
+          </ul>
+      </div>
+      <div class="link">
+          <h3>SUCURSAL LA PAZ</h3>
+          <ul>
+              <li><a href="#">PRODUCTOS</a></li>
+              <li class="location">
+                <img src="Imagenes/Ubicacion Amarillo.png" width="20px" alt="ubicacion">
+                <a href="https://www.google.com/maps/place/Av.Segunda,+Santa+Cruz" target="_blank">Av. Segunda / Condenbamba</a>
+            </li>
+            <li class="phone-number">
+                <img src="Imagenes/telefono amarillo.jpeg" width="20px" alt="Teléfono">
+                <a href="tel:611-0995">611-0995</a>
+            </li>
+          </ul>
+      </div>
+      <div class="link">
+          <h3>SUCURSAL SANTA CRUZ</h3>
+          <ul>
+              <li><a href="#">PRODUCTOS</a></li>
+              <li class="location">
+                  <img src="Imagenes/Ubicacion Amarillo.png" width="20px" alt="ubicacion">
+                  <a href="https://www.google.com/maps/place/Av.Segunda,+Santa+Cruz" target="_blank">Av. Segunda / Condenbamba</a>
+              </li>
+              <li class="phone-number">
+                  <img src="Imagenes/telefono amarillo.jpeg" width="20px" alt="Teléfono">
+                  <a href="tel:611-0995">611-0995</a>
+              </li>
+          </ul>
+      </div>
+      <div class="link">
+          <h3>SÍGUENOS</h3>
+          <div class="social-links">
+              <a href="https://www.facebook.com/LosEuros" target="_blank">
+                  <img src="Imagenes/facebook amarillo.png" alt="Facebook" width="30px">
+              </a>
+              <a href="https://www.instagram.com/LosEuros" target="_blank">
+                  <img src="Imagenes/instagranamarillo.png" alt="Instagram" width="30px">
+              </a>
+              <a href="https://wa.me/+59172793459" target="_blank">
+                  <img src="Imagenes/whaysapp amarillo.png" alt="WhatsApp" width="30px">
+              </a>
+          </div>
+      </div>
+  </div>
+  <div class="copyright-container">
+      <div class="copyright">
+          <p>&copy; 2025 Los Euros - Todos los derechos reservados.</p>
+          <p>Sitio protegido por hCaptcha y se aplican su <a href="#">Política de Privacidad</a> y <a href="#">Términos del Servicio</a>.</p>
+      </div>
+  </div>
+</footer>
+
+<!-- Botones flotantes -->
+<div class="botones">
+  <a href="https://maps.app.goo.gl/jyFwG1w8MxA6EeJq5" target="_blank" class="boton">
+    Ver nuestra ubicación
+  </a>
+  <div class="boton" onclick="toggleChatbot()">Abrir ChatBot</div>
+  <a href="https://wa.me/72793479" target="_blank" class="boton">
+    Contáctanos por WhatsApp
+  </a>
+</div>
+<div id="chatbot" class="chatbot-contenedor">
+  <button class="cerrar-chatbot" onclick="toggleChatbot()">✖</button>
+  <div class="chatbot-mensaje">¡Hola! Soy el asistente virtual de Los Euros. ¿En qué puedo ayudarte?</div>
+  <ul class="chatbot-preguntas">
+    <li onclick="responderChat(1)">¿Cuáles son sus horarios de atención?</li>
+    <li onclick="responderChat(2)">¿Dónde están ubicados?</li>
+    <li onclick="responderChat(3)">¿Qué métodos de pago aceptan?</li>
+    <li onclick="responderChat(4)">¿Tienen promociones?</li>
+    <li onclick="responderChat(5)">¿Cómo contacto con un asesor?</li>
+  </ul>
+  <div id="chatbot-respuesta" class="chatbot-respuesta"></div>
+
+  <input type="text" id="input-chatbot" class="chatbot-input" placeholder="Escribe tu pregunta...">
+  <button class="chatbot-boton-enviar" onclick="enviarPregunta()">Enviar</button>
+</div>
+
+<script>
+  function toggleChatbot() {
+    const chatbot = document.getElementById("chatbot");
+    chatbot.classList.toggle("activo");
+  }
+
+  function responderChat(pregunta) {
+    let respuesta = "";
+    switch(pregunta) {
+      case 1:
+        respuesta = "Atendemos de lunes a sábado de 8:00 a.m. a 6:00 p.m.";
+        break;
+      case 2:
+        respuesta = "Estamos en Cochabamba,Manuel De Falla 270.";
+        break;
+      case 3:
+        respuesta = "Aceptamos pagos en efectivo, transferencia y QR.";
+        break;
+      case 4:
+        respuesta = "Sí, revisa la sección de promociones o escríbenos por WhatsApp.";
+        break;
+      case 5:
+        respuesta = "Puedes contactar a un asesor escribiéndonos directamente por WhatsApp.";
+        break;
+    }
+    document.getElementById("chatbot-respuesta").innerText = respuesta;
+  }
+
+  function enviarPregunta() {
+    const preguntaUsuario = document.getElementById("input-chatbot").value;
+    if (preguntaUsuario.trim() !== "") {
+      document.getElementById("chatbot-respuesta").innerText = "Estoy buscando la respuesta para: " + preguntaUsuario;
+      if (preguntaUsuario.toLowerCase().includes("horarios")) {
+        document.getElementById("chatbot-respuesta").innerText = "Atendemos de lunes a sábado de 8:00 a.m. a 6:00 p.m.";
+      } else if (preguntaUsuario.toLowerCase().includes("ubicados")) {
+        document.getElementById("chatbot-respuesta").innerText = "Estamos en Cochabamba, Manuel De Falla 270";
+      } else {
+        document.getElementById("chatbot-respuesta").innerText = "Lo siento, no entiendo la pregunta. ¿Puedes reformularla?";
+      }
+    }
+    document.getElementById("input-chatbot").value = "";
+  }
+</script>
+  
+  
+</body>
+</html>
