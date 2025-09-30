@@ -1,0 +1,386 @@
+@media (max-width: 768px) {
+    .btn-login-header {
+      top: 50px;
+      right: 75px;
+    }
+  
+    .btn-login-header img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+  
+    .logo {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    .menu-icon-label {
+      display: block;
+      position: absolute;
+      left: 20px;
+      top: 52px; /* ← Baja el ícono */
+      z-index: 1100;
+      cursor: pointer;
+    }
+    
+    .menu-icon {
+      width: 50px; /* ← Aumenta el tamaño aquí */
+      height: auto; /* Mantiene la proporción */
+    }
+    
+  
+  
+    .navbar {
+      position: absolute;
+      top: 115px;
+      left: 0;
+      width: 60%;
+      flex-direction: column;
+      display: none;
+      background-color: #000000;
+      border-radius: 0 10px 10px 0;
+      z-index: 1000;
+      padding: 0;
+    }
+  
+    #menu-toggle:checked + .menu-icon-label + .navbar {
+      display: flex;
+    }
+  
+    ul.menu {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      gap: 0;
+    }
+  
+    ul.menu > li {
+      width: 100%;
+    }
+  
+    ul.menu > li > a {
+      width: 88.5%;
+      padding: 10px 15px; /* Hover más pequeño */
+      text-decoration: none;
+      color: #ffffff;
+      background-color: transparent;
+      border-bottom: none;
+      font-size: 15px;
+      transition: background-color 0.3s;
+    }
+  
+    ul.menu > li > a:hover {
+      background-color: #000000; /* efecto hover sutil */
+    }
+  
+    .dropdown {
+      position: static;
+      display: none;
+      background-color: #620f14;
+      width: 100%;
+      box-shadow: none;
+    }
+  
+    ul.menu > li:hover .dropdown,
+    ul.menu > li.active .dropdown {
+      display: block;
+    }
+  
+    .submenu-item .sub-submenu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #fefae2;
+      color: #000000;
+      margin-left: 0;
+      position: static !important;
+      padding: 5px 0;
+    }
+  
+    .submenu-item.open .sub-submenu {
+      display: flex;
+    }
+  
+    .submenu-item .sub-submenu a {
+      color: #000000;
+      text-decoration: none;
+      padding: 8px 15px;
+      background-color: transparent;
+      width: 88%;
+      display: block;
+      font-size: 14px;
+    }
+  
+    .submenu-item .sub-submenu a:hover {
+      background-color: #e0e0e0;
+    }
+  }
+  /* Para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .ruleta-nuevos {
+      margin-top: 30px; /* Reduce el margen superior en móviles */
+    }
+  
+    .carousel {
+      animation: scroll-ruleta 15s linear infinite; /* Animación más rápida en móvil */
+    }
+  
+    .item {
+      width: 80vw; /* Se ajusta al 80% del ancho */
+      margin: 0 5px; /* Reduce el margen entre los ítems */
+    }
+  
+    .item img {
+      width: 200px; /* Ajusta el tamaño de las imágenes */
+      height: 170px; /* Ajusta la altura */
+      margin-right: 10px; /* Reduce el margen derecho */
+    }
+  
+    .item .info h4 {
+      font-size: 1em; /* Ajusta el tamaño de los títulos */
+    }
+  
+    .item .info p {
+      font-size: 0.85em; /* Reduce el tamaño del texto */
+    }
+  
+    .item .info span {
+      font-size: 1em; /* Reduce el tamaño del precio */
+    }
+  
+    .item a img {
+      width: 100%; /* Hace que las imágenes se ajusten al contenedor */
+      height: auto; /* Mantiene la proporción */
+    }
+  }
+  
+  /* Para pantallas de tabletas */
+  @media screen and (max-width: 1024px) {
+    .item {
+      width: 70vw; /* Ajusta el tamaño del ítem */
+    }
+  
+    .item img {
+      width: 250px; /* Ajusta el tamaño de las imágenes */
+      height: 220px;
+    }
+  }
+  /* Hacer los botones más grandes en pantallas más pequeñas */
+@media (max-width: 600px) {
+    .btn {
+      padding: 10px 13px; /* Aumenta el tamaño del botón */
+      font-size: 18px; /* Aumenta el tamaño de la fuente */
+    }
+    .botones-flotantes {
+      bottom: 20px; /* Mueve los botones más abajo en pantallas pequeñas */
+      right: 30px; /* Aumenta el valor para mover los botones más a la derecha */
+    }
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    .carrusel-botones {
+      display: block;
+    }
+  
+    .carrusel-botones button {
+      position: absolute;
+      top: 59%;
+      transform: translateY(-50%);
+      background-color: rgba(164, 32, 46, 0.9);
+      color: #fefae2;
+      border: none;
+      padding: 12px;
+      font-size: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .carrusel-botones button:first-child {
+      left: 10px;
+    }
+  
+    .carrusel-botones button:last-child {
+      right: 10px;
+    }
+  
+    .productos-destacados {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .productoOVN {
+      width: 90%;
+      max-width: 320px;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 10px;
+      vertical-align: top;
+    }
+  
+    .productoOVN img {
+      max-width: 200px;
+    }
+  
+    .filtros {
+      justify-content: center;
+    }
+  }
+  
+  /* Para pantallas muy pequeñas (hasta 480px) */
+  @media screen and (max-width: 480px) {
+    .filtros button {
+      padding: 8px 10px;
+      font-size: 0.9em;
+    }
+  
+    .precio {
+      font-size: 1.3em;
+    }
+  }
+  
+  /* Estilo para pantallas pequeñas (ej. móviles) */
+@media screen and (max-width: 600px) {
+    .carrito-flotante {
+      width: 90%;                    /* Más ancho para móviles */
+      left: 10%;                      /* Centrado aproximadamente */
+      top: 15% !important;                  /* Lo baja en la pantalla */
+      right: auto !important;                  /* Anula el right para usar left */
+      bottom: auto;                  /* Quitamos bottom */
+      border-radius: 10px;
+      max-height: 40vh;
+    }
+    .carrito-flotante h3 {
+      font-size: 18px;
+    }
+  
+    .encabezados {
+      font-size: 12px;
+      grid-template-columns: 55px 1fr 1fr 1fr 60px;
+      gap: 5px;
+    }
+  
+    .lista-carrito li {
+      grid-template-columns: 50px 1fr 1fr 1fr 60px;
+      gap: 5px;
+      font-size: 12px;
+    }
+  
+    .lista-carrito li img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .boton-vaciar,
+    .boton-checkout,
+    .carrito-flotante button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  
+@media screen and (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .footer-col {
+      flex: 1 1 100%;
+    }
+  
+    .social-icons a {
+      margin: 5px;
+    }
+    .link-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .link {
+      flex: 1 1 45%;
+      min-width: 160px;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Para pantallas muy pequeñas (teléfonos) */
+  @media screen and (max-width: 480px) {
+    .link h3 {
+      font-size: 16px;
+    }
+  
+    .link ul li a {
+      font-size: 13px;
+    }
+  
+    .copyright p {
+      font-size: 12px;
+    }
+  }
+  
+  
+@media screen and (max-width: 600px) {
+    .chatbot-contenedor {
+      width: 60%;
+      right: 5%;
+      bottom: 80px;
+      padding: 10px;
+    }
+  
+    .chatbot-input {
+      width: calc(100% - 16px);
+      font-size: 13px;
+    }
+  
+    .chatbot-boton-enviar {
+      padding: 8px;
+      font-size: 13px;
+    }
+  
+    .chatbot-preguntas li {
+      font-size: 15px;
+      padding: 1px;
+    }
+  
+    .chatbot-respuesta {
+      font-size: 13px;
+      padding: 8px;
+    }
+  
+    .boton {
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 8px;  
+    }
+    .botones {
+      right: 7px; /* aún más a la derecha en celulares */
+    }
+    .chatbot-mensaje {
+      margin-top: 30px; /* Puedes ajustar el valor */
+    }
+    .cerrar-chatbot {
+      top: 2px; /* Menor valor lo acerca al borde superior */
+      right: 10px;
+    }
+    
+  }

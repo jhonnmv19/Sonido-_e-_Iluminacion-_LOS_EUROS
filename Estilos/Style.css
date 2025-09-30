@@ -1,0 +1,1838 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fefae2;
+  color: #620f14;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinea logo y menú más pegado */
+  gap: 10px;
+  width: 100%;
+}
+
+.logo {
+  width: auto;
+  margin-right: 10px; /* Reducido para que esté más junto */
+}
+
+.logo-img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.logo-img:hover {
+  transform: rotateY(360deg);
+}
+
+.menu-icon-label {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 30px;
+  height: auto;
+}
+
+.navbar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+ul.menu, ul.menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Ya no hay espacio entre ítems */
+}
+
+ul.menu > li {
+  position: relative;
+}
+
+ul.menu > li > a {
+  text-decoration: none;
+  color: #fefae2;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 10px; /* Reducido para acercarlos más */
+  display: block;
+  transition: background 0.3s;
+  border-radius: 5px;
+}
+
+ul.menu > li > a.active {
+  background-color: #a4202e;
+  color: #fefae2;
+}
+
+ul.menu > li > a:hover {
+  background-color: #a4202e;
+  color: #fefae2;
+}
+/* Menú principal activo */
+a.active:not(.submenu-item):not(.sub-submenu) {
+  background-color: #a4202e;
+  color: #fefae2;
+  font-weight: bold;
+}
+
+/* Submenú activo */
+a.active.submenu-item {
+  background-color: #e7b263;
+  color: #620f14;
+  font-weight: bold;
+}
+
+/* Sub-submenú activo */
+a.active.sub-submenu {
+  background-color: #620f14;
+  color: #fefae2;
+  font-weight: bold;
+}
+
+/* Dropdown Menú */
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #620f14;
+  min-width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.dropdown a {
+  display: block;
+  color: #fefae2;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.dropdown a:hover {
+  background-color: #a4202e;
+  color: #fefae2;
+}
+
+ul.menu > li:hover .dropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+/* Sub-submenús */
+.sub-submenu {
+  display: none;
+  background-color: #fefae2;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(249, 255, 197, 0.2);
+  margin-left: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 11;
+  min-width: 200px;
+  padding: 10px 0;
+}
+
+.submenu-item {
+  position: relative;
+}
+
+.submenu-item:hover > .sub-submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+.sub-submenu a {
+  padding: 10px 20px;
+  color: #000000;
+}
+/* Sub-submenú activo SOLO color, sin mover diseño */
+a.active.sub-submenu-item {
+  background-color: #620f14;
+  color: #fefae2;
+  font-weight: bold;
+}
+
+
+.sub-submenu a:hover {
+  background-color: #a4202e;
+  color: #fefae2;
+}
+.btn-login-header {
+  background-color: #a4202e;
+  padding: 9px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*login*/
+.btn-login-header {
+  position: fixed; /* o absolute si está dentro de un contenedor */
+  top: 39px; /* distancia desde arriba */
+  right: 115px; /* distancia desde la derecha */
+}
+.btn-login-header:hover {
+  transform: scale(1.1);
+}
+
+.btn-login-header img {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+/* Esto es para el icono del menú, puede ser un input y etiqueta */
+#menu-toggle {
+  display: none;
+}
+
+/* Íconos */
+.icons i {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.ruleta-nuevos {
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+  width: 100%; /* Ocupa todo el ancho */
+  overflow: hidden; /* Oculta contenido fuera del área visible */
+}
+
+.carousel {
+  display: flex;
+  animation: scroll-ruleta 20s linear infinite;
+  width: max-content;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background: #fefae2;
+  border-radius: 20px;
+  margin: 0 10px;
+  flex-shrink: 0;
+  padding: 10px;
+  width: 60vw;
+  max-width: 800px;
+}
+
+.item img {
+  width: 300px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+
+.item .info {
+  color: #620f14;
+}
+
+.item .info h4 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.item .info p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+.item .info span {
+  font-weight: bold;
+  color: #a4202e;
+  font-size: 1.1em;
+}
+
+.item a {
+  display: block;
+  margin-right: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.item a img {
+  width: 450px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.item a:hover img {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Ajuste de la animación */
+@keyframes scroll-ruleta {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ruleta-nuevos:hover .carousel {
+  animation-play-state: paused;
+}
+
+/* ------------------------ MEDIA QUERIES para Responsive ------------------------ */
+
+
+
+/* Botones flotantes */
+.botones-flotantes {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000; /* Para asegurarse de que los botones estén encima de otros elementos */
+}
+
+/* Estilo de los botones */
+.btn {
+  background: #a4202e;
+  color: white;
+  padding: 5px 10px; /* Tamaño base de los botones */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  font-size: 16px; /* Tamaño base de la fuente */
+  display: inline-block;
+}
+
+/* Efecto hover */
+.btn:hover {
+  background: #620f14;
+}
+.boton-carrito {
+  position: fixed;
+  top: 39px;
+  right: 52px;
+  width: 50px;
+  height: 45px;
+  background-color: #a4202e;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-carrito img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Hover (al pasar el mouse) */
+.boton-carrito:hover {
+  background-color: #861823;
+}
+
+/* Active (al presionar) */
+.boton-carrito:active {
+  transform: scale(0.95);
+}
+
+/* 📱 RESPONSIVE para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+  .boton-carrito {
+    top: 50px;
+    right: 7px;
+    width: 59px;
+    height: 55px;
+  }
+
+  .boton-carrito img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+
+
+/* Carrusel Categorías */
+.categorias {
+  padding: 20px;
+}
+.carrusel-categorias {
+  display: flex;
+  gap: 60px; /* aumenta si quieres más separación */
+  overflow: hidden;
+  animation: scroll-categorias 30s linear infinite;
+  width: 100%;
+}
+
+.categoria p {
+  font-weight: 600; /* o usa bold si lo prefieres */
+}
+
+.categoria {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+}
+.categoria img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+
+.carrusel-categorias {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  animation: scroll-categorias 20s linear infinite;
+  width: 100%;
+}
+
+.categorias {
+  padding: 20px;
+  background: #fefae2;
+}
+
+.carrusel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.carrusel-categorias {
+  display: flex;
+  gap: 60px; /* separación entre botones */
+  animation: scroll-categorias 30s linear infinite;
+  width: max-content; /* importante para que no se corte */
+}
+
+.categoria {
+  min-width: 180px;
+  flex-shrink: 0;
+  text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.categoria:hover {
+  transform: scale(1.05);
+}
+
+.categoria img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Animación infinita */
+@keyframes scroll-categorias {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.carrusel-wrapper:hover .carrusel-categorias {
+  animation-play-state: paused;
+}
+
+/* Highlights */
+.destacados {
+  background: #fff;
+  padding: 20px;
+}
+.filtros button {
+  margin-right: 10px;
+  padding: 10px;
+  background: #e7b263;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #620f14;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+.filtros button:hover {
+  transform: scale(1.1);
+  background: #a4202e;
+  color: white;
+}
+.productos-destacados {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.productoOVN {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  background: #fefae2;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 10px;
+}
+
+.productoOVN img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.descripcion {
+  color: #555;
+  font-size: 0.9em;
+  margin: 8px 0;
+}
+
+.precio {
+  color: #a4202e;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 10px 0;
+  background-color: #fefae2;
+  border-radius: 8px;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.boton-agregar,
+.boton-detalles {
+  background-color: #e7b263;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.boton-agregar:hover,
+.boton-detalles:hover {
+  background-color: #a4202e;
+}
+
+.destacados {
+  position: relative;
+}
+
+
+.carrusel-botones {
+  display: none; /* se muestra solo en celular */
+}
+/* Carrito flotante */
+
+/* Estilo para el carrito flotante */
+.carrito-flotante {
+  position: fixed;
+  right: 0;
+  top: 10%;
+  width: px; /* Ancho por defecto */
+  background: rgb(0, 0, 0);
+  border-left: 2px solid #a4202e;
+  box-shadow: -3px 3px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  z-index: 1001;
+  border-radius: 10px 0 0 10px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* La lista sola, con scroll si hay muchos productos */
+.lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1; /* Esto hace que tome el espacio libre disponible */
+  overflow-y: auto;
+}
+
+/* Los botones no se mueven */
+.acciones-carrito {
+  margin-top: -15px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+/* Título del carrito */
+.carrito-flotante h3 {
+  color: #a4202e;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center; /* Centra el título */
+}
+
+/* Encabezados de las columnas (Imagen, Producto, Precio, Cantidad, Acción) */
+.encabezados {
+  display: grid;
+  grid-template-columns: 70px 1fr 1fr 1fr 100px; /* Aumentamos el tamaño de la columna de imagen */
+  gap: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #a4202e; /* Línea de separación */
+}
+
+.encabezados span {
+  text-align: left;
+  color: #620f14;
+}
+
+/* Estilo para los items del carrito */
+.lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 160px; /* Solo muestra 2 productos (depende del tamaño) */
+  overflow-y: auto; /* Aparece el scroll normal si hay más */
+}
+.lista-carrito::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lista-carrito::-webkit-scrollbar-thumb {
+  background-color: #a4202e;
+  border-radius: 3px;
+}
+
+
+/* Estilo de cada item del carrito */
+.lista-carrito li {
+  display: grid;
+  grid-template-columns: 70px 1fr 1fr 1fr 100px; /* Aumentamos el tamaño de la columna de imagen */
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.lista-carrito li img {
+  width: 60px;  /* Aumentamos el tamaño de la imagen */
+  height: 60px;
+  object-fit: cover;
+}
+
+.lista-carrito li .producto {
+  color: #333;
+  font-size: 14px;
+}
+
+.lista-carrito li .precio {
+  color: #620f14;
+  font-weight: bold;
+}
+
+.lista-carrito li .cantidad {
+  text-align: center;
+}
+
+.lista-carrito li .accion {
+  text-align: center;
+}
+
+/* Estilo para el mensaje cuando el carrito está vacío */
+.carrito-flotante p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Estilo de botones */
+.carrito-flotante button {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.carrito-flotante button:hover {
+  opacity: 0.9;
+}
+
+/* Estilo individual para botones */
+.boton-vaciar {
+  background-color: #e7b263;
+  color: #620f14;
+}
+
+.carrito-flotante button[onclick="verNuevos()"] {
+  background-color: #620f14;
+  color: white;
+}
+
+.acciones-carrito {
+  margin-top: -25px;
+  text-align: center;
+}
+.boton-checkout {
+  background-color: #620f14;  /* Color del botón */
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boton-checkout:hover {
+  opacity: 0.9;  /* Efecto de hover */
+}
+/* Estilo por defecto para pantallas grandes */
+.carrito-flotante {
+  width: 450px;
+}
+
+
+.btn-login-flotante {
+  position: fixed;
+  top: 35px; /* para que esté arriba */
+  right: 120px;
+  background-color: #a4202e;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 9999; /* Muy alto para que esté sobre todo */
+  transition: transform 0.3s ease;
+}
+
+.btn-login-flotante:hover {
+  transform: scale(1.1);
+}
+
+.btn-login-flotante img {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+/* Contenedor principal del login */
+.login-container {
+  background: #fefae2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* ⬆ lo deja arriba */
+  height: 100vh;
+  padding-top: 60px; /* espacio superior */
+  height: 65vh;
+}
+
+/* Caja del formulario */
+.login-box {
+  background: white;
+  border: 3px solid #e7b263;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+ 
+}
+
+/* Título */
+.login-box h2 {
+  color: #a4202e;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Campos del formulario */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #e7b263;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #620f14;
+  background-color: #fff;
+}
+
+.login-box input::placeholder {
+  color: #a4202e;
+}
+
+/* Botón de inicio de sesión */
+.login-box button {
+  width: 100%;
+  background-color: #a4202e;
+  color: #fefae2;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #620f14;
+}
+
+/* Enlaces extra */
+.login-box .extra-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-box .extra-links a {
+  color: #620f14;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+.login-box .extra-links a:hover {
+  text-decoration: underline;
+}
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 15px;
+    max-width: 70%;
+    margin-bottom: 20px; /* Reduce el espacio debajo del cuadro */
+  }
+
+  .login-box h2 {
+    font-size: 18px;
+  }
+
+  .login-box input,
+  .login-box button {
+    font-size: 15px;
+    padding: 9px;
+    width: 90%;
+    margin: 0 auto 12px; /* Márgenes ajustados */
+    display: block;
+  }
+
+  /* Si el contenedor tiene demasiado espacio arriba o abajo */
+  .login-container {
+    padding-bottom: 0;
+    height: 50vh; /* Reduce el padding de la parte inferior */
+  }
+}
+
+
+
+
+/* Footer */
+.footer {
+  background-color: #620f14;
+  color: #fefae2;
+  padding: 20px;
+  text-align: center;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.link {
+  max-width: 220px;
+}
+
+.link h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.link ul {
+  list-style: none;
+  padding: 0;
+}
+
+.link ul li {
+  margin-bottom: 10px;
+}
+
+.link ul li a {
+  color: #fefae2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.link ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-links a {
+  margin-right: 10px;
+}
+
+.navbar-container {
+  background-color: #a4202e;
+  padding: 10px 0;
+}
+
+.navbar1 ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar1 ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar1 ul li a {
+  color: #fefae2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar1 ul li a:hover {
+  text-decoration: underline;
+}
+
+.copyright-container {
+  background-color: #620f14;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.copyright p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.copyright a {
+  color: #e7b263;
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+/* Carrito flotante con animación */
+.carrito-flotante {
+  position: fixed;
+  right: 0;
+  top: 100px;
+  width: 250px;
+  background: white;
+  border-left: 2px solid #a4202e;
+  box-shadow: -3px 3px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  z-index: 1001;
+  border-radius: 10px 0 0 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.carrito-cerrado {
+  transform: translateX(100%);
+}
+.botones {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.boton {
+  background-color: #a4202e;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.boton:hover {
+  background-color: #620f14;
+}
+
+.chatbot-contenedor {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background-color: #fefae2;
+  border: 2px solid #a4202e;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  padding: 15px;
+  z-index: 9999;
+  display: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.chatbot-contenedor.activo {
+  display: block;
+}
+
+.chatbot-mensaje {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #620f14;
+}
+
+.chatbot-preguntas li {
+  background-color: #e7b263;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chatbot-preguntas li:hover {
+  background-color: #a4202e;
+  color: white;
+}
+
+.chatbot-respuesta {
+  margin-top: 10px;
+  background-color: #fff4cc;
+  padding: 10px;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+.chatbot-input {
+  margin-top: 15px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #a4202e;
+  font-size: 14px;
+  outline: none;
+}
+
+.chatbot-boton-enviar {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #a4202e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cerrar-chatbot {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #620f14;
+  cursor: pointer;
+}
+
+/* Contacto */
+.contacto {
+  background: #fefae2;
+  color: #620f14;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 4px solid #a4202e;
+
+  /* 👉 Borde rojo completo */
+  border: 3px solid #620f14; /* rojo puro */
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 600px; /* límite para que el borde no sea tan ancho */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* opcional, para mejorar el efecto visual */
+}
+
+.contacto h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #a4202e;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contacto input,
+.contacto textarea {
+  padding: 12px;
+  border: 2px solid #e7b263;
+  border-radius: 10px;
+  background-color: white;
+  color: #620f14;
+  font-size: 16px;
+}
+
+.contacto input::placeholder,
+.contacto textarea::placeholder {
+  color: #a4202e;
+}
+
+.contacto input[type="submit"] {
+  background: #a4202e;
+  color: #fefae2;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.contacto input[type="submit"]:hover {
+  background: #620f14;
+}
+
+/* 📱 Estilos responsive para pantallas pequeñas */
+@media (max-width: 480px) {
+  .contacto {
+    padding: 20px 15px;
+    margin: 10px 15px;
+  }
+
+  .contacto h1 {
+    font-size: 24px;
+  }
+
+  .contacto input,
+  .contacto textarea,
+  .contacto input[type="submit"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+.registro-container {
+  background: #fefae2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.registro-box {
+  background: white;
+  border: 3px solid #e7b263;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: 0 15px;
+}
+
+.registro-box h2 {
+  color: #a4202e;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.registro-box input {
+  width: 80%; /* Reducción en el ancho de los campos */
+  max-width: 400px; /* Asegura que no sean demasiado anchos incluso en pantallas grandes */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #e7b263;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #620f14;
+  background-color: #fff;
+  display: block; /* Asegura que los inputs sean elementos bloque para centrarlos */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registro-box input::placeholder {
+  color: #a4202e;
+}
+
+.registro-box button {
+  width: 80%; /* Mantén los botones en el mismo ancho */
+  max-width: 400px; /* Asegura que no se estiren demasiado */
+  background-color: #a4202e;
+  color: #fefae2;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registro-box button:hover {
+  background-color: #620f14;
+}
+
+.error-message {
+  color: #a4202e;
+  font-size: 0.9em;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+#seguridadClave {
+  font-weight: bold;
+}
+
+#seguridadClave.baja {
+  color: #a4202e;
+}
+
+#seguridadClave.media {
+  color: #e7b263;
+}
+
+#seguridadClave.alta {
+  color: #0b7d45;
+}
+
+.mensaje-exito {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%, -20px);
+  background-color: #0b7d45;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-size: 16px;
+  font-family: sans-serif;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mensaje-exito.mostrar {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.oculto {
+  display: none;
+}
+#toggleClave {
+  position: absolute;
+  top: 9px;
+  right: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .registro-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 65vh;
+  }
+
+  .registro-box {
+    padding: 30px;
+    max-width: 90%;
+    margin: 0;
+  }
+
+  .registro-box h2 {
+    font-size: 20px;
+  }
+
+  .registro-box input,
+  .registro-box button {
+    font-size: 14px;
+    padding: 10px;
+    width: 90%; /* Mantener en un ancho reducido */
+  }
+  #toggleClave {
+    top: 6px;       /* Puedes ajustar más si quieres */
+    right: 30px;    /* Más cerca del borde del input en móviles */
+    font-size: 16px;
+  }
+
+}
+
+/* Media Queries para pantallas muy pequeñas, como teléfonos en orientación vertical */
+@media screen and (max-width: 480px) {
+  .registro-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .registro-box {
+    padding: 25px;
+    max-width: 95%;
+    margin: 0;
+  }
+
+  .registro-box h2 {
+    font-size: 18px;
+  }
+
+  .registro-box input,
+  .registro-box button {
+    font-size: 14px;
+    padding: 8px;
+    width: 80%; /* Mantener en un ancho reducido */
+  }
+}
+
+
+/* Enlaces */
+.extra-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.extra-links a {
+  color: #620f14;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+/* Estilo solo para los títulos h1 */
+h1 {
+  color: #a4202e;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: #fefae2;
+  padding: 1rem;
+  border-bottom: 3px solid #620f14;
+}
+
+/* Sección de detalles del producto */
+.detalles-producto {
+  background-color: #fefae2;
+  padding: 2rem;
+  color: #000000;
+}
+
+.detalles-producto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.detalles-producto ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.detalles-producto li strong {
+  color: #620f14;
+}
+
+.detalles-producto .button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #a4202e;
+  color: #fefae2;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.detalles-producto .button:hover {
+  background-color: #620f14;
+}
+.producto-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 7rem; /* Aumentamos el espacio entre la imagen y los detalles */
+}
+
+.producto-contenido img {
+  max-width: 600px; /* Aumentamos el tamaño máximo de la imagen */
+  flex: 1 1 45%;     /* Ajustamos para darle un poco más de espacio */
+  height: auto;
+  border-radius: 10px;
+}
+
+.producto-contenido .especificaciones {
+  flex: 1 1 50%;
+  margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .producto-contenido {
+    flex-direction: column;
+    gap: 2rem; /* Reducimos el espacio en móviles */
+  }
+
+  .producto-contenido img,
+  .producto-contenido .especificaciones {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 0; /* Eliminamos el margen adicional si no es necesario */
+  }
+
+  .producto-contenido .especificaciones {
+    margin-top: 0; /* Ajustamos para móviles */
+  }
+}
+
+
+
+.ruta-categoria {
+  padding: 1rem 2rem 0;
+  font-size: 1.1rem;
+  color: #620f14;
+  background-color: #fefae2;
+  font-weight: bold;
+}
+
+.ruta-categoria p {
+  margin: 0;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fefae2;
+  justify-items: center;
+}
+
+.producto {
+  background-color: white;
+  border: 2px solid #620f14;
+  width: 400px;
+  min-height: 380px;
+  border-radius: 12px;
+  text-align: center;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.producto img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto 0.5rem;
+}
+
+.producto h2 {
+  font-size: 1.2rem;
+  color: #a4202e;
+  margin-bottom: 0.3rem;
+  min-height: 2.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.producto p {
+  font-size: 0.95rem;
+  margin: 0.1rem 0;
+}
+
+.producto .precio {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #620f14;
+  margin-top: 0.5rem;
+}
+
+.producto .button {
+  margin-top: 2rem;
+  background-color: #a4202e;
+  color: #fefae2;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.producto .button:hover {
+  background-color: #620f14;
+}
+
+@media (max-width: 768px) {
+  .productos {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+  }
+
+  .producto {
+    width: 90%;
+    min-height: 500px; /* Aumenta la altura */
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .producto h2 {
+    font-size: 1.4rem;
+  }
+
+  .producto img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+main {
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #620f14;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#carrito-resumen {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff0f3;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#carrito-resumen ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#carrito-resumen li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+/* --- Estilos de la Sección del Carrito --- */
+
+/* 1. Contenedor de la lista para forzar columnas */
+.lista-columnas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 2. Estilo del ítem individual (Usando GRID para la alineación) */
+.item-carrito {
+    display: grid;
+    /* Define 4 columnas: Nombre, Precio, Cantidad, Acciones (botones) */
+    /* El nombre tiene 3 veces más espacio, luego 1x, 0.5x, y 1.5x para los botones */
+    grid-template-columns: 3fr 1fr 0.5fr 1.5fr; 
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+/* Alineación de las columnas */
+.carrito-nombre {
+    padding-right: 10px; /* Margen para que no pegue con el precio */
+}
+.carrito-precio {
+    text-align: right;
+    font-weight: bold;
+}
+.carrito-cantidad {
+    text-align: center;
+}
+.carrito-accion {
+    text-align: right;
+}
+
+/* 3. Estilo para los botones de Acción (x, +, -) */
+.boton-x, .boton-plus, .boton-minus {
+    background-color: #a4202e;; /* Amarillo (#ffc107) */
+    color: #ffe53f; /* Texto oscuro para contraste */
+    border: none;
+    padding: 4px 8px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 4. Estilo para el botón principal "Vaciar Carrito" */
+.boton-vaciar, button[onclick="vaciarCarrito()"] {
+    background-color: #a4202e; /* Color principal que solicitaste */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block; /* Para que ocupe todo el ancho si lo deseas */
+    width: 100%;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+form#formCheckout {
+  display: flex;
+  flex-direction: column;
+}
+
+form#formCheckout label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form#formCheckout input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form#formCheckout button {
+  padding: 15px;
+  background-color: #a4202e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form#formCheckout button:hover {
+  background-color: #8b1c26;
+}
+#carrito-resumen {
+  background-color: #fefae2;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#lista-carrito li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#lista-carrito img {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+button-choco {
+  background-color: #a4202e;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+button-choco:hover {
+  background-color: #620f14;
+}
+
+#formCheckout {
+  display: flex;
+  flex-direction: column;
+}
+
+#formCheckout label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#formCheckout input,
+#formCheckout select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#formCheckout button {
+  padding: 15px;
+  background-color: #a4202e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#formCheckout button:hover {
+  background-color: #8b1c26;
+}
+
+/* Información de transferencia */
+#infoTransferencia {
+  display: none;
+  margin-top: 15px;
+  background-color: #fff6e5;
+  border: 2px solid #e6b800;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Imagen QR más grande y responsive */
+#infoTransferencia img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Información de pago en efectivo */
+#infoEfectivo {
+  display: none;
+  margin-top: 15px;
+  background-color: #e2fef1;
+  border: 2px solid #1abc9c;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  #formCheckout input,
+  #formCheckout select {
+    font-size: 14px;
+  }
+
+  #infoTransferencia, #infoEfectivo {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  #infoTransferencia img {
+    max-width: 100%;
+  }
+
+  #formCheckout select {
+    font-size: 14px;
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+}
